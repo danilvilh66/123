@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danylo Vilkhovyi — Cybersecurity Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cursor glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Matrix rain canvas -->
+    <canvas id="matrixCanvas"></canvas>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-logo glitch" data-text="DV">DV<span class="logo-dot">.</span></div>
+        <div class="nav-links">
+            <a href="#about" class="nav-link" data-index="01">About</a>
+            <a href="#experience" class="nav-link" data-index="02">Experience</a>
+            <a href="#skills" class="nav-link" data-index="03">Skills</a>
+            <a href="#projects" class="nav-link" data-index="04">Projects</a>
+            <a href="#education" class="nav-link" data-index="05">Education</a>
+            <a href="#contact" class="nav-link" data-index="06">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#experience" class="mobile-link">Experience</a>
+        <a href="#skills" class="mobile-link">Skills</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#education" class="mobile-link">Education</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-tag reveal-up">
+                <span class="tag-bracket">&lt;</span>cybersecurity_student<span class="tag-bracket">/&gt;</span>
+            </div>
+            <h1 class="hero-name reveal-up delay-1">
+                <span class="line">Danylo</span>
+                <span class="line accent">Vilkhovyi</span>
+            </h1>
+            <div class="hero-typing reveal-up delay-2">
+                <span class="typing-prefix">~/portfolio $</span>
+                <span class="typing-text" id="typingText"></span>
+                <span class="typing-cursor">|</span>
+            </div>
+            <p class="hero-description reveal-up delay-3">
+                CCNA-certified Cybersecurity student with hands-on experience in IT support,
+                networking, and AI prompt engineering. Based in Warsaw, Poland.
+            </p>
+            <div class="hero-cta reveal-up delay-4">
+                <a href="#contact" class="btn btn-primary">
+                    <span class="btn-text">Get in Touch</span>
+                    <span class="btn-icon">&rarr;</span>
+                </a>
+                <a href="#projects" class="btn btn-secondary">
+                    <span class="btn-text">View Projects</span>
+                </a>
+            </div>
+            <div class="hero-stats reveal-up delay-5">
+                <div class="stat">
+                    <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Systems Built</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="95">0</span><span class="stat-plus">%</span>
+                    <span class="stat-label">Resolution Rate</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="40">0</span><span class="stat-plus">%</span>
+                    <span class="stat-label">Faster Delivery</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="terminal-window reveal-scale">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="terminal-title">danylo@kali:~</span>
+                </div>
+                <div class="terminal-body" id="terminalBody">
+                    <div class="terminal-line">
+                        <span class="prompt">$</span> <span class="cmd">nmap -sV portfolio.dev</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-index">01</span>
+                <h2 class="section-title reveal-left">About <span class="accent">Me</span></h2>
+                <div class="section-line reveal-width"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal-up">
+                    <p>
+                        I'm a 2nd-year <span class="highlight">Cybersecurity</span> student at UTH Warsaw
+                        with a strong passion for network security, ethical hacking, and building secure systems.
+                        With a <span class="highlight">GPA of 4.5</span> and a
+                        <span class="highlight">Cisco CCNA certification</span>, I combine academic excellence
+                        with practical, hands-on experience.
+                    </p>
+                    <p>
+                        My freelance work spans IT support for 15+ client systems, SMB network design,
+                        and AI prompt engineering for creative agencies. I apply a
+                        <span class="highlight">security-first</span> approach to every project.
+                    </p>
+                    <p>
+                        Currently seeking an IT Support, Helpdesk, or Cybersecurity internship where I can
+                        contribute my problem-solving skills in a professional enterprise environment.
+                    </p>
+                </div>
+                <div class="about-info reveal-up delay-1">
+                    <div class="info-card">
+                        <div class="info-icon">&#9673;</div>
+                        <div class="info-content">
+                            <span class="info-label">Location</span>
+                            <span class="info-value">Warsaw, Poland</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">&#9733;</div>
+                        <div class="info-content">
+                            <span class="info-label">Education</span>
+                            <span class="info-value">BSc Cybersecurity, UTH</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">&#9881;</div>
+                        <div class="info-content">
+                            <span class="info-label">Certification</span>
+                            <span class="info-value">Cisco CCNA</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">&#9875;</div>
+                        <div class="info-content">
+                            <span class="info-label">Languages</span>
+                            <span class="info-value">UA, RU, PL (C1), EN (B2)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section section-dark" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-index">02</span>
+                <h2 class="section-title reveal-left">Work <span class="accent">Experience</span></h2>
+                <div class="section-line reveal-width"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker">
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">AI Prompt Engineer</h3>
+                                <span class="timeline-company">Freelance &mdash; Warsaw</span>
+                            </div>
+                            <span class="timeline-date">Jan 2025 &ndash; Present</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Design & optimize AI prompts for ad copy, landing pages, and visual design briefs; cut content-production turnaround by <span class="accent">~40%</span></li>
+                            <li>Build reusable prompt libraries & workflow templates ensuring brand-consistent output across distributed creative teams</li>
+                            <li>Technical liaison between non-technical stakeholders and AI platforms (ChatGPT, Claude, Midjourney)</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="tag">ChatGPT</span>
+                            <span class="tag">Claude</span>
+                            <span class="tag">Midjourney</span>
+                            <span class="tag">Prompt Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-up delay-1">
+                    <div class="timeline-marker">
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">IT Support Technician</h3>
+                                <span class="timeline-company">Freelance &mdash; Warsaw</span>
+                            </div>
+                            <span class="timeline-date">2023 &ndash; 2025</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Assembled, configured & deployed <span class="accent">15+ systems</span>: hardware diagnostics, OS installation, driver & software rollout</li>
+                            <li>Designed home/small-office networks: router & switch config, Wi-Fi optimization, structured cabling, VLAN segmentation</li>
+                            <li>Achieved <span class="accent">~95% first-contact resolution</span> rate across remote and on-site engagements</li>
+                            <li>Hardened endpoints: antivirus, Windows Firewall & Group Policy, user account management, backup procedures</li>
+                            <li>Created user-facing documentation reducing repeat support tickets</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="tag">Windows</span>
+                            <span class="tag">Linux</span>
+                            <span class="tag">Networking</span>
+                            <span class="tag">Hardware</span>
+                            <span class="tag">Security</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-index">03</span>
+                <h2 class="section-title reveal-left">Technical <span class="accent">Skills</span></h2>
+                <div class="section-line reveal-width"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card reveal-up" data-tilt>
+                    <div class="skill-card-glow"></div>
+                    <div class="skill-icon">&#128274;</div>
+                    <h3 class="skill-title">Security</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Wireshark</span>
+                        <span class="skill-item">Nmap</span>
+                        <span class="skill-item">Kali Linux</span>
+                        <span class="skill-item">Firewall Config</span>
+                        <span class="skill-item">IDS/IPS</span>
+                        <span class="skill-item">SIEM</span>
+                        <span class="skill-item">Endpoint Protection</span>
+                        <span class="skill-item">Incident Response</span>
+                        <span class="skill-item">OWASP Top 10</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal-up delay-1" data-tilt>
+                    <div class="skill-card-glow"></div>
+                    <div class="skill-icon">&#127760;</div>
+                    <h3 class="skill-title">Networking</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">TCP/IP</span>
+                        <span class="skill-item">DNS / DHCP</span>
+                        <span class="skill-item">VLANs</span>
+                        <span class="skill-item">VPN</span>
+                        <span class="skill-item">NAT/PAT</span>
+                        <span class="skill-item">Cisco Packet Tracer</span>
+                        <span class="skill-item">LAN/WLAN Design</span>
+                        <span class="skill-item">SNMP Monitoring</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal-up delay-2" data-tilt>
+                    <div class="skill-card-glow"></div>
+                    <div class="skill-icon">&#128187;</div>
+                    <h3 class="skill-title">IT Support & Systems</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">PC Assembly</span>
+                        <span class="skill-item">Windows 10/11</span>
+                        <span class="skill-item">Ubuntu / Debian</span>
+                        <span class="skill-item">Active Directory</span>
+                        <span class="skill-item">Group Policy</span>
+                        <span class="skill-item">ITIL</span>
+                        <span class="skill-item">Remote Support</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal-up delay-3" data-tilt>
+                    <div class="skill-card-glow"></div>
+                    <div class="skill-icon">&#128296;</div>
+                    <h3 class="skill-title">Programming</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Bash</span>
+                        <span class="skill-item">SQL</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">C/C++</span>
+                        <span class="skill-item">Git & GitHub</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal-up delay-4" data-tilt>
+                    <div class="skill-card-glow"></div>
+                    <div class="skill-icon">&#9729;</div>
+                    <h3 class="skill-title">Cloud & Virtualisation</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">VMware</span>
+                        <span class="skill-item">VirtualBox</span>
+                        <span class="skill-item">Azure Basics</span>
+                        <span class="skill-item">AWS Basics</span>
+                        <span class="skill-item">IaaS</span>
+                        <span class="skill-item">IAM</span>
+                    </div>
+                </div>
+                <div class="skill-card reveal-up delay-5" data-tilt>
+                    <div class="skill-card-glow"></div>
+                    <div class="skill-icon">&#128736;</div>
+                    <h3 class="skill-title">Tools & Platforms</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">ServiceNow</span>
+                        <span class="skill-item">Jira</span>
+                        <span class="skill-item">Confluence</span>
+                        <span class="skill-item">Microsoft 365</span>
+                        <span class="skill-item">Google Workspace</span>
+                        <span class="skill-item">AI Prompt Eng.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section section-dark" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-index">04</span>
+                <h2 class="section-title reveal-left">Featured <span class="accent">Projects</span></h2>
+                <div class="section-line reveal-width"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card reveal-up" data-tilt>
+                    <div class="project-card-bg"></div>
+                    <div class="project-number">01</div>
+                    <div class="project-icon">&#128269;</div>
+                    <h3 class="project-title">Network Port Scanner</h3>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Socket</span>
+                        <span>Threading</span>
+                    </div>
+                    <p class="project-description">
+                        Multi-threaded TCP port scanner that detects open ports and fingerprints running services.
+                        Achieved ~60% faster scan times vs single-threaded baseline with CSV/JSON export.
+                    </p>
+                    <div class="project-stats">
+                        <div class="project-stat">
+                            <span class="project-stat-value">60%</span>
+                            <span class="project-stat-label">Faster</span>
+                        </div>
+                        <div class="project-stat">
+                            <span class="project-stat-value">Multi</span>
+                            <span class="project-stat-label">Threaded</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card reveal-up delay-1" data-tilt>
+                    <div class="project-card-bg"></div>
+                    <div class="project-number">02</div>
+                    <div class="project-icon">&#128272;</div>
+                    <h3 class="project-title">Home Lab &mdash; Security & Networking</h3>
+                    <div class="project-tech">
+                        <span>VMware</span>
+                        <span>Kali Linux</span>
+                        <span>pfSense</span>
+                    </div>
+                    <p class="project-description">
+                        Virtualised security lab with pfSense firewall, Windows Server (AD), and Kali Linux.
+                        Practiced network segmentation, firewall rules, VLAN isolation, and IDS alert triage.
+                    </p>
+                    <div class="project-stats">
+                        <div class="project-stat">
+                            <span class="project-stat-value">3+</span>
+                            <span class="project-stat-label">VMs</span>
+                        </div>
+                        <div class="project-stat">
+                            <span class="project-stat-value">AD</span>
+                            <span class="project-stat-label">Domain</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card reveal-up delay-2" data-tilt>
+                    <div class="project-card-bg"></div>
+                    <div class="project-number">03</div>
+                    <div class="project-icon">&#127918;</div>
+                    <h3 class="project-title">3D Maze Game Engine</h3>
+                    <div class="project-tech">
+                        <span>Java</span>
+                        <span>JMonkeyEngine</span>
+                    </div>
+                    <p class="project-description">
+                        Game prototype featuring procedural level generation, real-time physics simulation,
+                        and dynamic lighting. Demonstrates strong OOP and algorithm design skills.
+                    </p>
+                    <div class="project-stats">
+                        <div class="project-stat">
+                            <span class="project-stat-value">3D</span>
+                            <span class="project-stat-label">Engine</span>
+                        </div>
+                        <div class="project-stat">
+                            <span class="project-stat-value">Proc</span>
+                            <span class="project-stat-label">Gen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section class="section" id="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-index">05</span>
+                <h2 class="section-title reveal-left">Education & <span class="accent">Certs</span></h2>
+                <div class="section-line reveal-width"></div>
+            </div>
+            <div class="edu-grid">
+                <div class="edu-card reveal-up">
+                    <div class="edu-card-accent"></div>
+                    <div class="edu-badge">BSc</div>
+                    <h3 class="edu-title">Cybersecurity</h3>
+                    <p class="edu-institution">UTH Warsaw (Uczelnia Techniczno-Handlowa im. H. Chodkowskiej)</p>
+                    <span class="edu-date">2024 &ndash; 2027 (expected)</span>
+                    <div class="edu-details">
+                        <div class="edu-gpa">
+                            <span class="gpa-label">GPA</span>
+                            <span class="gpa-value">4.5</span>
+                        </div>
+                        <div class="edu-courses">
+                            <span>Network Security</span>
+                            <span>Cryptography</span>
+                            <span>Ethical Hacking</span>
+                            <span>Digital Forensics</span>
+                            <span>Operating Systems</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="edu-card cert-card reveal-up delay-1">
+                    <div class="edu-card-accent cert-accent"></div>
+                    <div class="edu-badge cert-badge">CCNA</div>
+                    <h3 class="edu-title">Cisco CCNA</h3>
+                    <p class="edu-institution">Cisco Systems</p>
+                    <div class="cert-topics">
+                        <span>Routing & Switching</span>
+                        <span>Network Fundamentals</span>
+                        <span>IP Connectivity</span>
+                        <span>Security Fundamentals</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-dark" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-index">06</span>
+                <h2 class="section-title reveal-left">Get in <span class="accent">Touch</span></h2>
+                <div class="section-line reveal-width"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-text reveal-up">
+                    <p class="contact-intro">
+                        Interested in working together or have an opportunity?
+                        I'm always open to discussing new projects, internships,
+                        or cybersecurity challenges.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:danilvilh66@gmail.com" class="contact-link">
+                            <div class="contact-link-icon">&#9993;</div>
+                            <div class="contact-link-info">
+                                <span class="contact-link-label">Email</span>
+                                <span class="contact-link-value">danilvilh66@gmail.com</span>
+                            </div>
+                            <span class="contact-arrow">&rarr;</span>
+                        </a>
+                        <a href="tel:+48735438380" class="contact-link">
+                            <div class="contact-link-icon">&#9742;</div>
+                            <div class="contact-link-info">
+                                <span class="contact-link-label">Phone</span>
+                                <span class="contact-link-value">+48 735 438 380</span>
+                            </div>
+                            <span class="contact-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://linkedin.com/in/danilvilh66" target="_blank" rel="noopener" class="contact-link">
+                            <div class="contact-link-icon">&#128279;</div>
+                            <div class="contact-link-info">
+                                <span class="contact-link-label">LinkedIn</span>
+                                <span class="contact-link-value">linkedin.com/in/danilvilh66</span>
+                            </div>
+                            <span class="contact-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://github.com/danilvilh66" target="_blank" rel="noopener" class="contact-link">
+                            <div class="contact-link-icon">&#128187;</div>
+                            <div class="contact-link-info">
+                                <span class="contact-link-label">GitHub</span>
+                                <span class="contact-link-value">github.com/danilvilh66</span>
+                            </div>
+                            <span class="contact-arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-terminal reveal-up delay-1">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">contact.sh</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">cat contact_info.json</span></div>
+                            <div class="terminal-line json-output">
+                                <pre>{
+  "name": "Danylo Vilkhovyi",
+  "location": "Warsaw, Poland",
+  "status": "<span class="accent">Open to opportunities</span>",
+  "interests": [
+    "Cybersecurity Internship",
+    "IT Support / Helpdesk",
+    "Network Security"
+  ],
+  "available": true
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <span class="footer-logo glitch" data-text="DV">DV<span class="logo-dot">.</span></span>
+                <p class="footer-text">&copy; 2025 Danylo Vilkhovyi. Crafted with security in mind.</p>
+                <div class="footer-links">
+                    <a href="mailto:danilvilh66@gmail.com">Email</a>
+                    <a href="https://linkedin.com/in/danilvilh66" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/danilvilh66" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
